@@ -4,7 +4,7 @@ require_once "config.php";
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <!-- Déclaration des métadonnées -->
     <meta charset="UTF-8">
@@ -22,7 +22,7 @@ require_once "config.php";
 <body>
 <div class="main-section">
     <div class="add-section">
-      <form action="app/add.php" method="POST" autocomplete="off">
+      <form action="add.php" method="POST" autocomplete="off">
         <label for="libelle">Titre :</label>
         <?php
         // Afficher un message d'erreur avec une bordure rouge si 'mess' est défini à 'error' dans la requête GET
