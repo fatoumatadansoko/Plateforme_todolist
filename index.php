@@ -10,6 +10,7 @@ require_once "config.php";
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <!-- Titre de la page -->
     <title>PHP - MYSQL - CRUD</title>
     <!-- Inclusion du JavaScript Bootstrap -->
@@ -50,10 +51,7 @@ require_once "config.php";
 
       <?php
 
-      // Inclure le fichier de connexion à la base de données
-      require 'db_conn.php';
-
-      
+    
 
 
       // Requête SQL pour récupérer les tâches
@@ -65,16 +63,7 @@ require_once "config.php";
       ?>
 
       <?php
-      // Vérifier s'il y a des tâches
-      if ($totalTodos <= 0) {
-        // Afficher un message s'il n'y a pas de tâches
-        echo '<div class="todo-item">
-          <div class="empty">
-            <img src="img/file.png" width="100%" />
-            <img src="img/Ellipsis.gif" width="90px">
-          </div>
-        </div>';
-      } else {
+      
 
         // Afficher les tâches
         while ($todo = $stmt->fetch(PDO::FETCH_ASSOC)) {
@@ -101,44 +90,11 @@ require_once "config.php";
           echo '<p>Date d\'échéance : ' . $todo['date_echeance'] . '</p>'; // Enfin la date d'échéance
           echo '</div>'; // Fermer le conteneur pour chaque tâche
         }
-      }
+      
       ?>
     </div>
   </div>
-<section style="margin: 50px 0;">
-    <!-- Conteneur principal -->
-    <div class="container">
-        <!-- Tableau pour afficher les données -->
-        <table class="table table-dark">
-            <thead>
-                <!-- En-têtes de colonne -->
-                <tr>
-                    <th scope="col">Id</th>
-                    <th scope="col">Student Name</th>
-                    <th scope="col">Grade</th>
-                    <th scope="col">Marks</th>
-                    <th scope="col">Edit</th>
-                    <th scope="col">Delete</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($resultats as $student) { ?>
-                <!-- Affichage des données dans les lignes du tableau -->
-                <tr class="trow">
-                    <td><?php echo $student['id']; ?></td>
-                    <td><?php echo $student['name']; ?></td>
-                    <td><?php echo $student['class']; ?></td>
-                    <td><?php echo $student['marks']; ?></td>
-                    <!-- Bouton pour éditer les données avec un lien vers updatedata.php -->
-                    <td><a href="update.php?id=<?php echo $student['id']; ?>" class="btn btn-primary">Edit</a></td>
-                    <!-- Bouton pour supprimer les données avec un lien vers deletedata.php -->
-                    <td><a href="delete.php?id=<?php echo $student['id']; ?>" class="btn btn-danger">Delete</a></td>
-                </tr>
-                <?php } ?>
-            </tbody>
-        </table>
-    </div>
-</section>
+
 
 </body>
 
