@@ -5,6 +5,8 @@ define("DBUSER", "root");
 define("DBPASS", "");
 define("DBNAME", "todolist");
 
+
+
 // Connexion à la base de données en utilisant PDO
 try {
     $conn = new PDO("mysql:host=" . DBHOST . ";dbname=" . DBNAME, DBUSER, DBPASS);

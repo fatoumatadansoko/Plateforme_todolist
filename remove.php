@@ -12,7 +12,7 @@ if(isset($_GET['id'])){
         $res = $stmt->execute([$id]);
 
         if($res){
-            header("Location:index.php?mess=succes");
+            header("Location:todolist.php?mess=succes");
         }else {
             echo 0;
         }
@@ -20,5 +20,5 @@ if(isset($_GET['id'])){
         exit();
     }
 }else {
-    header("Location: index.php?mess=error");
+    header("Location: todolist.php?mess=error");
 }
