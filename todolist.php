@@ -27,6 +27,7 @@ require_once "config.php";
 
 <body>
 <h2>Bienvenue, <?php echo $_SESSION['email']; ?>!</h2>
+<a href="logout.php">Se Déconnecter</a>
     <div class="main-section">
         <div class="add-section">
              <form action="add.php" method="POST" autocomplete="off">
