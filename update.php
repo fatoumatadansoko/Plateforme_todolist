@@ -77,8 +77,9 @@ $etat = $todo['etat'];
         <!-- Titre principal -->
         <h1 class="text-center">Modifier Tâche</h1>
         <!-- Formulaire de modification de la tâche -->
-        <form action="update.php?id=<?php echo $id; ?>" method="post">
+        <form action="" method="post">
             <!-- Champ pour le libellé de la tâche -->
+            <input type="text" name="id"   value="<?php echo $id; ?>">
             <div class="mb-3">
                 <label for="libelle" class="form-label">Libellé</label>
                 <input type="text" class="form-control" id="libelle" name="libelle" value="<?php echo $libelle; ?>" required>
@@ -122,7 +123,7 @@ $etat = $todo['etat'];
                 </select>
             </div>
             <!-- Bouton de soumission du formulaire -->
-            <button type="submit" class="btn btn-primary">Modifier</button>
+            <button type="submit" name="submit" class="btn btn-primary">Modifier</button>
         </form>
     </section>
 
